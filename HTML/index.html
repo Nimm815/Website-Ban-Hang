@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Minimal Fashion</title>
+
+    <link rel="stylesheet"
+        href="../style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            OWEN
+        </div>
+
+        <nav>
+
+              <a href="index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="collection.html">Collection</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+
+        </nav>
+
+        <div id="authSection" style="display:none; width: 150px;">
+            <div class="user-profile">
+                <button class="logout-btn" onclick="handleLogout()">LOGOUT</button>
+                <div class="user-info">
+                    <p id="userNameDisplay">User</p>
+                    <p id="userEmailDisplay">email</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="authBtn" style="display:none; width: 100px;">
+            <button class="auth-btn" onclick="openAuthModal()" style="width: 100%; margin: 0; padding: 8px 0; font-size: 12px;">LOGIN</button>
+        </div>
+
+        <div class="menu-btn">
+
+            ☰
+
+        </div>
+
+    </header>
+
+    <section class="hero">
+
+        <img src="../Images/Header_TrangChu.jpg"
+            alt="Header_TrangChu">
+
+        <div class="hero-content">
+
+            <h1>
+
+                Autumn Collection
+
+            </h1>
+
+            <p>
+
+                Timeless garments inspired by modern simplicity.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="intro reveal">
+
+        <p>
+
+            Quiet luxury, premium materials and elegant silhouettes.
+
+        </p>
+
+    </section>
+
+    <section class="gallery">
+
+        <div class="card reveal">
+
+            <img src="../Images/card_reveal1.jpg">
+
+            <h3>Outerwear</h3>
+
+        </div>
+
+        <div class="card reveal">
+
+            <img src="../Images/card_reveal2.jpg">
+
+            <h3>Knitwear</h3>
+
+        </div>
+
+        <div class="card reveal">
+
+            <img src="../Images/card_reveal3.jpg">
+
+            <h3>Accessories</h3>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+
+            2026 - OWEN Viet Nam 
+
+        </p>
+
+    </footer>
+
+    <!-- AUTH MODAL -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-container">
+           
+            <!-- LOGIN FORM -->
+            <div id="loginForm">
+                <h2>LOGIN</h2>
+                <div id="loginError"></div>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="Minimum 6 characters" required>
+                    </div>
+                    <button type="submit" class="auth-btn">LOGIN</button>
+                </form>
+                <div class="auth-toggle">
+                    Chưa có tài khoản?
+                    <button onclick="switchToRegister()">Đăng ký</button>
+                </div>
+                 <div style="text-align:center; margin-bottom:12px;">
+                <button class="guest-btn" onclick="handleGuestLogin()">Tiếp tục với tư cách Khách</button>
+            </div>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <div id="registerForm" style="display:none;">
+                <h2>REGISTER</h2>
+                <div id="registerError"></div>
+                <form onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="registerName" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="registerEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="registerPassword" placeholder="Minimum 6 characters" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" placeholder="Confirm password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">REGISTER</button>
+                </form>
+                <div class="auth-toggle">
+                    Đã có tài khoản?
+                    <button onclick="switchToLogin()">Đăng nhập</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

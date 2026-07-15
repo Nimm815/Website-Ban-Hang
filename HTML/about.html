@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About - OWEN</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        OWEN
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="collection.html">Collection</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+
+    </nav>
+
+    <div id="authSection" style="display:none; width: 150px;">
+        <div class="user-profile">
+            <button class="logout-btn" onclick="handleLogout()">LOGOUT</button>
+            <div class="user-info">
+                <p id="userNameDisplay">User</p>
+                <p id="userEmailDisplay">email</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="authBtn" style="display:none; width: 100px;">
+        <button class="auth-btn" onclick="openAuthModal()" style="width: 100%; margin: 0; padding: 8px 0; font-size: 12px;">LOGIN</button>
+    </div>
+
+    <div class="menu-btn">
+        ☰
+    </div>
+
+</header>
+
+
+
+<section class="about-page">
+
+    <div class="about-container">
+
+        <h1>ABOUT OWEN</h1>
+
+        <p class="about-intro">
+
+            OWEN is a contemporary fashion brand dedicated to creating
+            timeless clothing that blends elegance, comfort and
+            functionality. Inspired by modern minimalism, we believe
+            that clothing should not only express personal style but
+            also become a natural part of everyday life.
+
+        </p>
+
+
+
+
+
+        <div class="about-block reveal">
+
+            <h2>Our Story</h2>
+
+            <p>
+
+                Since our establishment, OWEN has focused on delivering
+                garments with clean silhouettes, refined tailoring and
+                premium materials. We are inspired by simplicity and
+                believe that true luxury comes from quality,
+                craftsmanship and attention to detail rather than
+                excessive decoration.
+
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="about-block reveal">
+
+            <h2>Our Philosophy</h2>
+
+            <p>
+
+                Fashion should be timeless rather than seasonal.
+                Every collection is carefully designed to ensure that
+                each garment remains relevant for years to come.
+                We pursue a balance between modern aesthetics and
+                everyday practicality, allowing customers to build
+                a wardrobe that is both versatile and elegant.
+
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="about-block reveal">
+
+            <h2>Materials & Quality</h2>
+
+            <p>
+
+                Every fabric is selected with care, from soft cotton
+                and premium wool to breathable linen. Our production
+                process emphasizes precision, durability and comfort,
+                ensuring that every piece meets the highest standards
+                before reaching our customers.
+
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="about-block reveal">
+
+            <h2>Craftsmanship</h2>
+
+            <p>
+
+                Behind every OWEN collection is a commitment to
+                exceptional craftsmanship. We work closely with skilled
+                designers and manufacturers to ensure every stitch,
+                every cut and every finish reflects our dedication to
+                quality. We believe that thoughtful construction is
+                what transforms clothing into lasting essentials.
+
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="about-block reveal">
+
+            <h2>Sustainability</h2>
+
+            <p>
+
+                We recognize the importance of responsible fashion.
+                OWEN continuously seeks better materials, efficient
+                production methods and long-lasting designs that reduce
+                unnecessary consumption. Creating garments that people
+                will wear and appreciate for years is one of the most
+                sustainable choices we can make.
+
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="about-block reveal">
+
+            <h2>Our Vision</h2>
+
+            <p>
+
+                Our vision is to become a trusted destination for
+                individuals who appreciate understated elegance and
+                premium quality. We strive to create collections that
+                inspire confidence while celebrating simplicity,
+                authenticity and timeless design.
+
+            </p>
+
+        </div>
+
+
+
+
+
+        <div class="about-block reveal">
+
+            <h2>Contact</h2>
+
+            <p>
+
+                OWEN Vietnam<br>
+                Email: support@owen.vn<br>
+                Phone: (+84) 0123 456 789<br>
+                Address: Hanoi, Vietnam
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<footer>
+
+    <p>
+        2026 - OWEN Viet Nam
+    </p>
+
+</footer>
+
+<!-- AUTH MODAL -->
+<div id="authModal" class="auth-modal">
+    <div class="auth-container">
+        <div style="text-align:center; margin-bottom:12px;">
+            <button class="guest-btn" onclick="handleGuestLogin()">Tiếp tục với tư cách Khách</button>
+        </div>
+        <!-- LOGIN FORM -->
+        <div id="loginForm">
+            <h2>LOGIN</h2>
+            <div id="loginError"></div>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Minimum 6 characters" required>
+                </div>
+                <button type="submit" class="auth-btn">LOGIN</button>
+            </form>
+            <div class="auth-toggle">
+                Chưa có tài khoản?
+                <button onclick="switchToRegister()">Đăng ký</button>
+            </div>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div id="registerForm" style="display:none;">
+            <h2>REGISTER</h2>
+            <div id="registerError"></div>
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="registerName" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="registerEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword" placeholder="Minimum 6 characters" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="auth-btn">REGISTER</button>
+            </form>
+            <div class="auth-toggle">
+                Đã có tài khoản?
+                <button onclick="switchToLogin()">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../script.js"></script>
+
+</body>
+
+</html>
+```

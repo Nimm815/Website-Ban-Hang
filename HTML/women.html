@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Women - OWEN</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        OWEN
+    </div>
+
+
+    <nav>
+
+          <a href="index.html">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="collection.html">Collection</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+
+    </nav>
+
+    <div id="authSection" style="display:none; width: 150px;">
+        <div class="user-profile">
+            <button class="logout-btn" onclick="handleLogout()">LOGOUT</button>
+            <div class="user-info">
+                <p id="userNameDisplay">User</p>
+                <p id="userEmailDisplay">email</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="authBtn" style="display:none; width: 100px;">
+        <button class="auth-btn" onclick="openAuthModal()" style="width: 100%; margin: 0; padding: 8px 0; font-size: 12px;">LOGIN</button>
+    </div>
+
+    <div class="menu-btn">
+
+        ☰
+
+    </div>
+
+
+</header>
+
+
+
+
+
+<section class="collection-cover">
+
+
+    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=2000">
+
+
+    <div class="cover-text">
+
+        <h1>
+            WOMEN
+        </h1>
+
+
+        <p>
+            SPRING / SUMMER 2026
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="category-bar">
+
+
+    <a href="#">
+        ALL
+    </a>
+
+
+    <a href="#">
+        OUTERWEAR
+    </a>
+
+
+    <a href="#">
+        DRESSES
+    </a>
+
+
+    <a href="#">
+        KNITWEAR
+    </a>
+
+
+    <a href="#">
+        TOPS
+    </a>
+
+
+    <a href="#">
+        ACCESSORIES
+    </a>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="product-grid">
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=900">
+
+
+        <h3>
+            Minimal Wool Coat
+        </h3>
+
+
+        <p>
+            $480
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=900">
+
+
+        <h3>
+            Cotton Dress
+        </h3>
+
+
+        <p>
+            $320
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=900">
+
+
+        <h3>
+            Soft Knit Sweater
+        </h3>
+
+
+        <p>
+            $220
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900">
+
+
+        <h3>
+            Relaxed Shirt
+        </h3>
+
+
+        <p>
+            $180
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=900">
+
+
+        <h3>
+            Pleated Skirt
+        </h3>
+
+
+        <p>
+            $260
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=900">
+
+
+        <h3>
+            Linen Jacket
+        </h3>
+
+
+        <p>
+            $350
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=900">
+
+
+        <h3>
+            Everyday Blouse
+        </h3>
+
+
+        <p>
+            $160
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="product-card reveal">
+
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900">
+
+
+        <h3>
+            Modern Collection Piece
+        </h3>
+
+
+        <p>
+            $390
+        </p>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+    <p>
+        2026 - OWEN Viet Nam
+    </p>
+
+</footer>
+
+<!-- AUTH MODAL -->
+<div id="authModal" class="auth-modal">
+    <div class="auth-container">
+        <div style="text-align:center; margin-bottom:12px;">
+            <button class="guest-btn" onclick="handleGuestLogin()">Tiếp tục với tư cách Khách</button>
+        </div>
+        <!-- LOGIN FORM -->
+        <div id="loginForm">
+            <h2>LOGIN</h2>
+            <div id="loginError"></div>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Minimum 6 characters" required>
+                </div>
+                <button type="submit" class="auth-btn">LOGIN</button>
+            </form>
+            <div class="auth-toggle">
+                Chưa có tài khoản?
+                <button onclick="switchToRegister()">Đăng ký</button>
+            </div>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div id="registerForm" style="display:none;">
+            <h2>REGISTER</h2>
+            <div id="registerError"></div>
+            <form onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="registerName" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="registerEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword" placeholder="Minimum 6 characters" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="auth-btn">REGISTER</button>
+            </form>
+            <div class="auth-toggle">
+                Đã có tài khoản?
+                <button onclick="switchToLogin()">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../script.js"></script>
+
+
+</body>
+
+</html>
